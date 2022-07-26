@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -38,14 +39,14 @@ export const Contact = () => {
     let result = await response.json();
     setFormDetails(formInitialDetails);
     if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully' });
+      setStatus({ succes: true, message: 'Mensaje enviado con exito' });
     } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.' });
+      setStatus({ succes: false, message: 'Tu mensaje no se a podido enviar intentalo mas tarde.' });
     }
   };
 
   return (
-    <section className="contact" id="connect">
+    <section className="contact" id="contact">
       <Container>
         <Row className="align-items-center">
           <Col size={12} md={6}>
