@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Nav } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
@@ -47,6 +47,10 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex + 1);
     }
   }
+  const [activeLink, setActiveLink] = useState('home');
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  }
 
   return (
     <section className="banner" id="home">
@@ -59,7 +63,7 @@ export const Banner = () => {
                 <span className="tagline">Bienvenido a mi portafolio</span>
                 <h1>{`Hola! Soy camilo`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Desarrollador Web", "Diseñador web", "Desarrollador Backend" ]'><span className="wrap">{text}</span></span></h1>
                 <p>Soy desarollador web conocedor de varias tecnologias para el desarrollo de aplicaciones web, manejo de bases de datos relacionales, y tambien manejo la parte del backend con lenguajes como php el cual es mi fuerte, tambien me encuentro aprendiendo de frameworks como laravel, y para el front angular. soy apasionado y dispuesto a aprender nuevas tecnologias para el desarrollo. </p>
-                <button onClick={() => console.log('connect')}>Contactate conmigo <ArrowRightCircle size={25} /></button>
+                <Nav.Link href="#contact" className="button" onClick={() => onUpdateActiveLink('contact')}>Contactate conmigo <ArrowRightCircle size={25} /></Nav.Link>
               </div>}
             </TrackVisibility>
           </Col>
