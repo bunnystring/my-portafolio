@@ -73,7 +73,12 @@ input:focus, textarea:focus, select:focus {
 		padding: 0 150px;
 	}
 }
-
+@media (max-width: 700px){
+  .banner h1 {
+    font-size: 40px !important;
+    color: #fff;
+  }
+}
 p.success {
 	color: green;
 }
